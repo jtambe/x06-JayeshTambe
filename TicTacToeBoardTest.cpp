@@ -18,3 +18,21 @@ TEST(TicTacToeBoardTest, sanityCheck)
 {
 	ASSERT_TRUE(true);
 }
+
+TEST(TicTacToeBoardTest, blankBoard)
+{
+	bool checker = true;
+	TicTacToeBoard b;
+	b.clearBoard();
+	for(int i = 0; i < 3 ; i++ )
+	{
+		for (int j = 0; j < 3;j++)
+		{
+			if (b.getPiece(i,j) != Blank)
+			{
+				checker = false;	
+			}
+		}
+	}
+	ASSERT_TRUE(checker);
+}
