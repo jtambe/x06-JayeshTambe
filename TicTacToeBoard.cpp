@@ -100,9 +100,9 @@ Piece TicTacToeBoard::getWinner()
        		{
         		return board[i][0];
        		}
-	       	else if(board[0][2] == board[1][1] && board[1][1] == board[2][0])
+	       	else if(board[0][i] == board[1][i] && board[1][i] == board[2][i])
 		{
-			return board[i][0];	
+			return board[0][i];	
 		}
 
 	}
