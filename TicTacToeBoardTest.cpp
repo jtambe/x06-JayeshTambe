@@ -36,3 +36,79 @@ TEST(TicTacToeBoardTest, blankBoard)
 	}
 	ASSERT_TRUE(checker);
 }
+
+
+TEST(TicTacToeBoardTest, getWinner)
+{
+	bool checker = true;
+	TicTacToeBoard b;
+	b.clearBoard();
+	//b.getWinner();
+	ASSERT_TRUE(b.getWinner() == Invalid);
+
+}
+
+
+TEST(TicTacToeBoardTest, placePieceatInvalidPlace)
+{
+	TicTacToeBoard b;	
+	//b.placePiece(4,5);
+	ASSERT_TRUE(b.placePiece(4,5) == Invalid);
+
+}
+
+TEST(TicTacToeBoardTest, placePieceAtZeroZero)
+{
+	TicTacToeBoard b;	
+	//b.placePiece(4,5);
+	ASSERT_TRUE(b.placePiece(0,0) == X);
+	
+
+}
+
+
+TEST(TicTacToeBoardTest, placeSecondPieceAtZeroZero)
+{
+	TicTacToeBoard b;	
+	b.placePiece(0,0);
+	ASSERT_TRUE(b.placePiece(0,0) == X);
+
+
+}
+
+
+TEST(TicTacToeBoardTest, getPieceHighRowHighCol)
+{
+	TicTacToeBoard b;	
+	b.clearBoard();
+	ASSERT_TRUE(b.getPiece(4,4) == Invalid);
+
+}
+
+
+TEST(TicTacToeBoardTest, getPieceLowRowLowCol)
+{
+	TicTacToeBoard b;	
+	b.clearBoard();
+	ASSERT_TRUE(b.getPiece(-1,-1) == Invalid);
+
+}
+
+
+TEST(TicTacToeBoardTest, PlacePieceHighRowHighCol)
+{
+	TicTacToeBoard b;	
+	//b.placepiece(4,4);
+	ASSERT_TRUE(b.placePiece(4,4) == Invalid);
+
+}
+
+
+
+TEST(TicTacToeBoardTest, PlacePieceLowRowLowCol)
+{
+	TicTacToeBoard b;	
+	//b.clearBoard();
+	ASSERT_TRUE(b.placePiece(-1,-1) == Invalid);
+
+}
