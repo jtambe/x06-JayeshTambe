@@ -4,6 +4,7 @@
 
 #include <gtest/gtest.h>
 #include "TicTacToeBoard.h"
+using namespace std;
  
 class TicTacToeBoardTest : public ::testing::Test
 {
@@ -43,7 +44,7 @@ TEST(TicTacToeBoardTest, getWinner)
 	bool checker = true;
 	TicTacToeBoard b;
 	b.clearBoard();
-	//b.getWinner();
+	//cout << b.getWinner() << endl;
 	ASSERT_TRUE(b.getWinner() == Invalid);
 
 }
@@ -112,3 +113,60 @@ TEST(TicTacToeBoardTest, PlacePieceLowRowLowCol)
 	ASSERT_TRUE(b.placePiece(-1,-1) == Invalid);
 
 }
+
+TEST(TicTacToeBoardTest, getWinnerOneDiagonal)
+{
+	TicTacToeBoard b;
+	b.placePiece(0,0);
+	b.placePiece(0,1);
+	b.placePiece(1,1);
+	b.placePiece(1,2);
+	b.placePiece(2,2);
+	ASSERT_TRUE(b.getWinner() == X);
+}
+
+
+
+TEST(TicTacToeBoardTest, getWinnerReverseDiagonal)
+{
+	TicTacToeBoard b;
+	b.placePiece(0,2);
+	b.placePiece(0,1);
+	b.placePiece(1,1);
+	b.placePiece(1,2);
+	b.placePiece(2,0);
+	ASSERT_TRUE(b.getWinner() == X);
+}
+
+TEST(TicTacToeBoardTest, getWinnerOneCol)
+{
+	TicTacToeBoard b;
+	b.placePiece(0,0);
+	b.placePiece(0,1);
+	b.placePiece(1,0);
+	b.placePiece(1,2);
+	b.placePiece(2,0);
+	ASSERT_TRUE(b.getWinner() == X);
+}
+
+TEST(TicTacToeBoardTest, getWinnerOneRow)
+{
+	TicTacToeBoard b;
+	b.placePiece(0,0);
+	b.placePiece(1,0);
+	b.placePiece(0,1);
+	b.placePiece(1,2);
+	b.placePiece(0,2);
+	ASSERT_TRUE(b.getWinner() == X);
+}
+
+
+
+
+
+
+
+
+
+
+

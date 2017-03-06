@@ -90,17 +90,17 @@ Piece TicTacToeBoard::getWinner()
 	{
 		return board[0][0];
 	}
-	else if(board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][0] != Blank && board[0][0] != Invalid)
+	else if(board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][2] != Blank && board[0][2] != Invalid)
 	{
 		return board[0][2];		
 	}
 	for (int i = 0 ; i < 3; i++)
 	{	                                                                          	       	
-		if(board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[0][0] != Blank && board[0][0] != Invalid)
+		if(board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][0] != Blank && board[i][0] != Invalid)
        		{
         		return board[i][0];
        		}
-	       	else if(board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[0][0] != Blank && board[0][0] != Invalid)
+	       	else if(board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[0][i] != Blank && board[0][i] != Invalid)
 		{
 			return board[0][i];	
 		}
