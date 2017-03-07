@@ -161,6 +161,22 @@ TEST(TicTacToeBoardTest, getWinnerOneRow)
 }
 
 
+TEST(TicTacToeBoardTest, getWinnerFilledIncompleteBoard)
+{
+	TicTacToeBoard b;
+	b.placePiece(0,0);//x
+	b.placePiece(0,1);//y
+	b.placePiece(0,2);//x
+	b.placePiece(1,0);//y
+	b.placePiece(2,0);//x
+	b.placePiece(1,1);//y
+	b.placePiece(2,1);//x
+	b.placePiece(2,2);//y
+	b.placePiece(1,2);//x
+	ASSERT_TRUE(b.getWinner() == Blank);
+}
+
+
 
 
 
